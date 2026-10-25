@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextClock
+            android:id="@+id/clock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="96dp"
+            android:fontFamily="sans-serif-light"
+            android:format12Hour="HH:mm"
+            android:format24Hour="HH:mm"
+            android:textColor="#FFFFFF"
+            android:textSize="64sp" />
+
+        <TextClock
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:format12Hour="EEEE, d 'de' MMMM"
+            android:format24Hour="EEEE, d 'de' MMMM"
+            android:textColor="#CCFFFFFF"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/openDrawer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text="Todos os apps" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/drawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E6000000"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:hint="Buscar app"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#88FFFFFF" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/apps"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
+</FrameLayout>
